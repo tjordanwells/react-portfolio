@@ -2,8 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
-import ButtonBase from '@material-ui/core/ButtonBase';
-import Typography from '@material-ui/core/Typography';
+import { ButtonBase, Typography } from '@material-ui/core';
 
 const styles = theme => ({
   root: {
@@ -11,9 +10,7 @@ const styles = theme => ({
     flexWrap: 'wrap',
     minWidth: 300,
     width: '100%',
-    position: 'fixed',
     top: 0,
-    height: '12rem',
     justifyContent: 'center',
   },
   button: {
@@ -81,7 +78,7 @@ const buttons = [
   },
 ];
 
-function ButtonBases(props) {
+function Nav(props) {
   const { classes } = props;
 
   return (
@@ -114,8 +111,8 @@ function ButtonBases(props) {
   );
 }
 
-ButtonBases.propTypes = {
+Nav.propTypes = {
   classes: PropTypes.object.isRequired,
 };
 
-export default withStyles(styles)(ButtonBases);
+export default withStyles(styles)(Nav);

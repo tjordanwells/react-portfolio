@@ -1,25 +1,31 @@
 import React from 'react';
 
-import Nav from '../Nav'
 import Avatar from './Avatar';
 import Grid from '@material-ui/core/Grid';
+import PropTypes from 'prop-types';
+import { withStyles } from '@material-ui/core/styles';
 
+const styles = () => ({
+  root: {
+    flexGrow: 1,
+  }
+});
 
 const About = (props) => {
+  const { classes } = props;
     return (
-        <div>
-          <Grid container>
-            <Grid item>
-              <Nav />
-            </Grid>
+      <div className={classes.root}>
+        <Grid container spacing={24}>
+          <Grid item md={6}>
+            <Avatar />
           </Grid>
-          <Grid container>
-            <Grid item>
-              <Avatar />
-            </Grid>
-          </Grid>
-        </div>
+        </Grid>
+      </div>
     )
 }
 
-export default About;
+About.propTypes = {
+  classes: PropTypes.object.isRequired,
+};
+
+export default withStyles(styles)(About);
