@@ -1,0 +1,14 @@
+{
+  "main.js": "/static/js/main.01b64733.chunk.js",
+  "main.js.map": "/static/js/main.01b64733.chunk.js.map",
+  "static/js/1.e08a43e0.chunk.js": "/static/js/1.e08a43e0.chunk.js",
+  "static/js/1.e08a43e0.chunk.js.map": "/static/js/1.e08a43e0.chunk.js.map",
+  "runtime~main.js": "/static/js/runtime~main.229c360f.js",
+  "runtime~main.js.map": "/static/js/runtime~main.229c360f.js.map",
+  "static/media/wikiwalk.png": "/static/media/wikiwalk.da284a27.png",
+  "static/media/rickandmorty.jpg": "/static/media/rickandmorty.369241a4.jpg",
+  "static/media/nyt.png": "/static/media/nyt.8a64493b.png",
+  "index.html": "/index.html",
+  "precache-manifest.5ddfc8f6b5b4952c9c491ffc3b5c795a.js": "/precache-manifest.5ddfc8f6b5b4952c9c491ffc3b5c795a.js",
+  "service-worker.js": "/service-worker.js"
+}
