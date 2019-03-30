@@ -8,6 +8,7 @@ import { withStyles } from '@material-ui/core/styles';
 const styles = () => ({
   root: {
     flexGrow: 1,
+    marginBottom: 150,
   }
 });
 

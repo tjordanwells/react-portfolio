@@ -12,6 +12,7 @@ import rickandmorty from '../../images/rickandmorty.jpg';
 const styles = () => ({
   root: {
     flexGrow: 1,
+    marginBottom: 150,
   },
   portfolio: {
     display: 'flex',

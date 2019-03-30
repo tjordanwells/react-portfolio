@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Grid, TextField, Paper, Typography, Button } from '@material-ui/core';
+import { Grid, TextField, Paper, Typography, Button, Grow, Dialog, DialogContent, DialogContentText, DialogActions, DialogTitle } from '@material-ui/core';
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
 
@@ -36,13 +36,18 @@ const styles = theme => ({
   }
 });
 
+function Transition(props) {
+  return <Grow {...props} />;
+}
+
 class Contact extends Component {
 
   state = {
       name: '',
       subject: '',
       email: '',
-      message: ''
+      message: '',
+      open: false
     };
   
   handleChange = name => event => {
@@ -51,11 +56,22 @@ class Contact extends Component {
     });
   };
 
+  handleClose = () => {
+    this.setState({ open: false });
+  };
+
   formSubmit = () => { emailjs.send('gmail', 'template_wXRGbnfO', this.state, 'user_hF2KvSHVU1Y2sHgYSC7Q5')
     .then((response) => {
-       console.log('SUCCESS!', response.status, response.text, this.state);
+      console.log('SUCCESS!', response.status, response.text, this.state);
+      this.setState({
+        name: '',
+        subject: '',
+        email: '',
+        message: '',
+        open: true
+      });
     }, (err) => {
-       console.log('FAILED...', err);
+      console.log('FAILED...', err);
     });
   };
 
@@ -69,11 +85,7 @@ class Contact extends Component {
               Interested in working together?
             </Typography>
           </Grid>
-          <Grid item lg={12}>
-            <Typography className={classes.text} component='h6' variant='h6' gutterBottom>
-              I'm always on the lookout for new projects.
-            </Typography>
-          </Grid>
+          <Grid item lg={12} />
           <Paper className={classes.root} elevation={1}>
             <form className={classes.container} noValidate autoComplete="off" id='contactForm'>
               <Grid item xs={5}>
@@ -144,6 +156,30 @@ class Contact extends Component {
             </Grid>
           <Grid item xs={5} />
         </Grid>
+        <Dialog
+          open={this.state.open}
+          TransitionComponent={Transition}
+          keepMounted
+          onClose={this.handleClose}
+          aria-labelledby="alert-dialog-slide-title"
+          aria-describedby="alert-dialog-slide-description"
+        >
+          <DialogTitle id="alert-dialog-slide-title">
+            {"Thanks for reaching out!"}
+          </DialogTitle>
+          <DialogContent>
+            <DialogContentText id="alert-dialog-slide-description">
+              I will get back to you as soon as possible. <br/><br/>
+              Best, <br/>
+              Jordan
+            </DialogContentText>
+          </DialogContent>
+          <DialogActions>
+            <Button onClick={this.handleClose} color="primary">
+              Close
+            </Button>
+          </DialogActions>
+        </Dialog>
       </div>
     )
   }
