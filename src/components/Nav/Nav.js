@@ -67,6 +67,11 @@ const buttons = [
     route: '/about'
   },
   {
+    title: 'Blog',
+    width: '6%',
+    route: '/blog'
+  },
+  {
     title: 'Portfolio',
     width: '7%',
     route: '/portfolio'

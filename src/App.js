@@ -7,6 +7,7 @@ import About from './components/About';
 import Contact from './components/Contact';
 import Portfolio from './components/Portfolio';
 import SocialNav from './components/SocialNav';
+import Blog from './components/Blog';
 
 class App extends Component {
   render() {
@@ -18,6 +19,7 @@ class App extends Component {
           <Route exact path='/about' component={About} />
           <Route exact path='/contact' component={Contact} />
           <Route exact path='/portfolio' component={Portfolio} />
+          <Route exact path='/blog' component={Blog} />
         </Switch>
         <SocialNav />
       </Router>

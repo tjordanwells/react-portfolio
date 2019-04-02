@@ -10,7 +10,7 @@ const styles = theme => ({
     ...theme.mixins.gutters(),
     paddingTop: theme.spacing.unit * 4,
     paddingBottom: theme.spacing.unit * 6,
-    marginTop: theme.spacing.unit * 4
+    marginTop: theme.spacing.unit * 2
   },
   form: {
     justifyContent: 'center'
@@ -21,7 +21,7 @@ const styles = theme => ({
   },
   text: {
     textAlign: 'center',
-    fontWeight: 500
+    fontFamily: 'Raleway',
   },
   container: {
     display: 'flex',
@@ -81,7 +81,7 @@ class Contact extends Component {
       <div className={classes.root}>
         <Grid className={classes.form} container spacing={24}>
           <Grid item lg={12}>
-            <Typography className={classes.text} component="h2" variant="h2" gutterBottom>
+            <Typography className={classes.text} component="h4" variant="h4" gutterBottom>
               Interested in working together?
             </Typography>
           </Grid>
